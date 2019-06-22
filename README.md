@@ -31,7 +31,10 @@ Library :
 ## 5. DateTime 
 ..* Write it soon
 
-## 6. Main Script 
+## 6. Hash and cryptography 
+..* Write it soon
+
+## 7. Main Script 
 ..* Write it soon
 
 I create login with ID (tag-rfid) and then with tag-rfid run 3 work like "take picture" and "get video" and "timer"

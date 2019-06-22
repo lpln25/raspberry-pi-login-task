@@ -11,13 +11,7 @@ Library :
 
 ## Pieces
 
-![Raspberry pi zero](http://s8.picofile.com/file/8364362850/raspberry_pi.jpg)
-
-![RFID MFRC522 Reader & Writer](http://s9.picofile.com/file/8364363826/RC522_RFID.jpg)
-
-![PiCamera](http://s8.picofile.com/file/8364364118/picamera.jpg)
-
-![LED](http://s8.picofile.com/file/8364364468/led.jpg)
+![Raspberry pi zero - RFID - Picamera - LED ](http://s8.picofile.com/file/8364366234/result.jpg)
 
 ## Create Project Main
 ..* Write it soon

@@ -44,7 +44,7 @@ sudo pip install picamera
 ...* Write it soon
 
 ## 4. Sqlite 
-######Create DateBase
+4.1. Create DateBase
 ~~~python
 CREATE TABLE `log` (
 	`Id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,

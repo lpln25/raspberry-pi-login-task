@@ -35,16 +35,46 @@ sudo pip install picamera
 ~~~
 
 ## 1. LED
-...* Write it soon
+Test part of LED to do show ending process of task
+~~~python
+import RPi.GPIO as GPIO
+import time
+
+def notification():
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(18,GPIO.OUT)
+    GPIO.output(18,GPIO.HIGH)
+    time.sleep(0.1)
+    GPIO.output(18,GPIO.LOW)
+    #GPIO.cleanup()
+~~~
 
 ## 2. PiCamera
-...* Write it soon
+1. Capture Image
+~~~python
+import PiCamera
+def capture_():
+    camera = picamera.PiCamera()
+    camera.capture('name.jpg')
+    camera.close()
+~~~
+2. Record Video
+~~~python
+import PiCamera
+def video_():
+    camera = picamera.PiCamera()
+    camera.start_recording('name.h264')
+    time.sleep(5)
+    camera.stop_recording()
+    camera.close()
+
+~~~
 
 ## 3. RFID
 ...* Write it soon
 
 ## 4. Sqlite 
-4.1. Create DateBase
+1. Create DateBase
 ~~~python
 CREATE TABLE `log` (
 	`Id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,

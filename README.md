@@ -220,7 +220,17 @@ if __name__ == "__main__" :
 print ("\n==> turn off system")
 ~~~
 
-## 9. Thanks
+## 9. Auto run code after reboot raspberry pi
+First save Script with name `main.py`, then add it in the ` crontab ` file
+~~~python
+$ sudo crontab -e
+~~~
+~~~python
+@reboot python3 /home/pi/main.py
+~~~
+To Save it press `^X` then press `Y`
+
+## 10. Thanks
 So Thanks from my teacher (Mis ` Yasamin Salem `) that She was inspiring me.
 
 

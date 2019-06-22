@@ -216,6 +216,13 @@ if __name__ == "__main__" :
 print ("\n==> turn off system")
 ~~~
 
-I create login with ID (tag-rfid) and then with tag-rfid run 3 work like "take picture" and "get video" and "timer"
-so Thanks from my teacher (Mis `Salem Yasamin`).
+I create login system with ID (tag-rfid) and then with three tag-rfid, we could run 3 Task :
+1. take picture
+2. get video
+3. timer"
+
+## 9. Thanks
+So Thanks from my teacher (Mis ` Yasamin Salem `) that She was inspiring me.
+
+
 

@@ -225,6 +225,7 @@ First save Script with name `main.py`, then add it in the ` crontab ` file
 ~~~python
 $ sudo crontab -e
 ~~~
+add comment in GNU File: crontab
 ~~~python
 @reboot python3 /home/pi/main.py
 ~~~

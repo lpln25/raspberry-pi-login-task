@@ -1,5 +1,9 @@
 # raspberry-pi-login-task
-raspberry pi - login RFID and multi task
+
+This Project can help you to create `login system` with ID (tag-rfid) and then with three tag-rfid, we could `run three Task` :
+1. Take picture
+2. Get video
+3. Timer"
 
 Library :
 ○ RFID
@@ -215,11 +219,6 @@ if __name__ == "__main__" :
 
 print ("\n==> turn off system")
 ~~~
-
-I create login system with ID (tag-rfid) and then with three tag-rfid, we could run 3 Task :
-1. take picture
-2. get video
-3. timer"
 
 ## 9. Thanks
 So Thanks from my teacher (Mis ` Yasamin Salem `) that She was inspiring me.

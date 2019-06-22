@@ -71,27 +71,151 @@ def video_():
 ~~~
 
 ## 3. RFID
-...* Write it soon
-
-## 4. Sqlite 
-1. Create DateBase
 ~~~python
-CREATE TABLE `log` (
+from  mfrc522 import SimpleMFRC522
+
+reader = SimpleMFRC522()
+Id, Value = reader.read()
+~~~
+
+## 4. DateTime 
+
+~~~python
+from datetime import datetime
+def timeNow():
+    DT = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    #DT = datetime.now().strftime('%Y-%m-%d')
+    return DT
+    
+~~~
+
+## 5. Sqlite 
+1. Create DataBase in shell of command then use it
+~~~python
+$ sqlite3 datebase.db
+~~~
+~~~python
+sqlite> CREATE TABLE `log` (
 	`Id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
 	`Value`	TEXT DEFAULT 'Default',
 	`DateTime`	TEXT DEFAULT 'Time'
 );
 ~~~
+~~~python
+sqlite> .exit
+~~~
+2. The code of insert row in `datebase.db`
+to help get time-now of system, use `timeNow()`
+~~~python
+import sqlite3
 
-## 5. DateTime 
+def insert_():
+    DateTime = timeNow()
+    Value = log
+    query = "insert into [log] (Value,DateTime) Values ('"+Value +"','"+ DateTime+"');"
+    con=sqlite3.connect(constring)
+    cm = con.cursor()
+    cm.execute(query)
+    con.commit()
+    con.close()
+~~~
+
+## 6. Timer
+The timer will counting to 5 hours and then stop
+this Function help `reset_timer()` to reset the `timer()`
+~~~python
+def reset_timer():
+    mm = 0
+    hh = 0
+    ss = 0
+    
+def timer():
+    while flag_Timer :
+        ss += 1
+        if ss > 59 :
+            mm = mm+1
+            ss = 0
+        if mm > 59 :
+            hh += 1
+            mm = 0
+        if hh >= maxHH :
+            #1 flag
+            #2 notification
+            #3 insert log
+            flag_Timer = False
+            log = "Pass 5:00:00 Hour"
+            insert_()
+            reset_timer()
+
+~~~
+
+## 7. Hash and cryptography 
 ...* Write it soon
 
-## 6. Hash and cryptography 
-...* Write it soon
+## 8. Main Script 
+~~~python
+ID_ = "[your id tag-RFID]"
+user = "[user name]"
+value1 = 10 # task one (value of tag RFID)
+value2 = 20 # task two (value of tag RFID)
+value3 = 30 # task three (value of tag RFID)
 
-## 7. Main Script 
-...* Write it soon
+if __name__ == "__main__" :
+    log = "Turn on"
+    insert_()
+    notification()
+    reader = SimpleMFRC522()
+    # Login Loop
+    while True :
+        print("ID card: ")
+        id_,vl= reader.read()
+        if str(id_) == ID_ :
+            notification()
+            print("Succesful Login\n")
+            break
+        else:
+            print("wrong ID! \n")
+    
+    # task Loop
+    #1 notificaition
+    #2 insert log time login
+    #3 read tag task
+    log = "Login " + user
+    insert_()
+    notification()
+    
+    tag = 0
+    while True :
+        print("task card:::: ")
+        notification()
+        id_,tag = reader.read()
+        if ID_ == str(id_):
+            # jump out from this loop
+            log = "sign out"
+            insert_()
+            notification()
+            break
+        elif value1 == int(tag):
+            # capture
+            capture_()
+            notification()
+        elif value2== int(tag):
+            # video
+            video_()
+            notification()
+        elif value3== int(tag):
+            # timer
+            #print("timer")
+            notification()
+            if not tr_timer.is_alive():
+                tr_timer.start()
+            else:
+                tr_timer.start()
+        
+
+print ("\n==> turn off system")
+~~~
 
 I create login with ID (tag-rfid) and then with tag-rfid run 3 work like "take picture" and "get video" and "timer"
-so Thanks from my teacher (Salem Yasamin).
+so Thanks from my teacher (Mis `Salem Yasamin`).
 

@@ -13,8 +13,26 @@ Library :
 
 ![Raspberry pi zero - RFID - Picamera - LED ](http://s8.picofile.com/file/8364366234/result.jpg)
 
-## Create Project Main
-...* Write it soon
+## Create Project Main and Install library
+1. update our Raspberry Pi 
+~~~python
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install python3-dev python3-pip
+sudo pip3 install spidev
+~~~
+2. install the MFRC522 library
+~~~python
+sudo pip3 install mfrc522
+~~~
+3. install the Sqlite3 library
+~~~python
+sudo apt-get install sqlite3
+~~~
+4. install the PiCamera library
+~~~python
+sudo pip install picamera
+~~~
 
 ## 1. LED
 ...* Write it soon
@@ -26,7 +44,14 @@ Library :
 ...* Write it soon
 
 ## 4. Sqlite 
-...* Write it soon
+######Create DateBase
+~~~python
+CREATE TABLE `log` (
+	`Id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	`Value`	TEXT DEFAULT 'Default',
+	`DateTime`	TEXT DEFAULT 'Time'
+);
+~~~
 
 ## 5. DateTime 
 ...* Write it soon

@@ -1,4 +1,4 @@
-# raspberry-pi-login-task
+# raspberry-pi-login-multi-task
 
 This Project can help you to create `login system` with ID (tag-rfid) and then with three tag-rfid, we could `run three Task` :
 1. Take picture
